@@ -5,3 +5,19 @@ body, html {
 * {
     box-sizing: border-box;
 }
+
+
+/* Header component */
+.header {
+    display: flex;
+    height: 65px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
