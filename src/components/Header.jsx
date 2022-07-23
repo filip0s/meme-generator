@@ -5,9 +5,9 @@ const Header = () => {
         <header className="header">
             <div className="logo">
                 <img className="logo--image" src={trollFace} alt="Troll Face"/>
-                <span className="logo--text">Meme generator</span>
+                <span className="logo--title">Meme generator</span>
             </div>
-            <span>
+            <span className="project">
                 React Course - Project 3
             </span>
         </header>
