@@ -1,6 +1,6 @@
 const Meme = () => {
   return (
-      <div className="meme">
+      <main className="meme">
           <form className="meme--form" action="">
               <input type="text"/>
               <input type="text"/>
@@ -8,7 +8,7 @@ const Meme = () => {
                   Get a new meme image
               </button>
           </form>
-      </div>
+      </main>
   )
 }
 
