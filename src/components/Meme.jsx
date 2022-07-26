@@ -8,6 +8,7 @@ const Meme = () => {
         bottomText: "",
     });
 
+
     const getRandomMemeImage = () => {
         const memeArray = memesData.data.memes;
         const randomMemeIdx = Math.floor(Math.random() * memeArray.length)
@@ -20,6 +21,16 @@ const Meme = () => {
         })
     }
 
+    const handleChange = (event) => {
+        const {name, value} = event.target;
+        setMeme((prevState) => {
+            return {
+                ...prevState,
+                [name]: value,
+            }
+        })
+    }
+
     return (
         <main>
             <div className="form">
@@ -27,11 +38,17 @@ const Meme = () => {
                     className="form--input"
                     placeholder="Top text"
                     type="text"
+                    name="topText"
+                    value={meme.topText}
+                    onChange={handleChange}
                 />
                 <input
                     className="form--input"
                     placeholder="Bottom text"
                     type="text"
+                    name="bottomText"
+                    value={meme.bottomText}
+                    onChange={handleChange}
                 />
                 <button
                     className="form--button"
@@ -42,10 +59,9 @@ const Meme = () => {
             </div>
             <div className="meme">
                 <img className="meme--image" src={meme.randomImage} alt="Meme"/>
-                <h2 className="meme--text top"></h2>
-                <h2 className="meme--text bottom"></h2>
+                <h2 className="meme--text top">{meme.topText}</h2>
+                <h2 className="meme--text bottom">{meme.bottomText}</h2>
             </div>
-
         </main>
     )
 }
