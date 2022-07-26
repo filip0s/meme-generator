@@ -1,5 +1,6 @@
 import memesData from "../assets/data/memesData";
 import {useState} from "react";
+
 const Meme = () => {
     const [meme, setMeme] = useState({
         randomImage: "http://i.imgflip.com/1bij.jpg",
@@ -20,26 +21,30 @@ const Meme = () => {
     }
 
     return (
-        <main className="meme">
-            <div className="meme--form" >
+        <main>
+            <div className="form">
                 <input
-                    className="meme--form--input"
+                    className="form--input"
                     placeholder="Top text"
                     type="text"
                 />
                 <input
-                    className="meme--form--input"
+                    className="form--input"
                     placeholder="Bottom text"
                     type="text"
                 />
                 <button
-                    className="meme--form--button"
+                    className="form--button"
                     onClick={getRandomMemeImage}
                 >
                     Get a new meme image
                 </button>
             </div>
-            <img className="meme--image" src={meme.randomImage} alt="Meme"/>
+            <div className="meme">
+                <img className="meme--image" src={meme.randomImage} alt="Meme"/>
+                <h2 className="meme--text top"></h2>
+                <h2 className="meme--text bottom"></h2>
+            </div>
 
         </main>
     )
